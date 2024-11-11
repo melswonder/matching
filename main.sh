@@ -2,7 +2,7 @@
 INTORA=""
 PASS=""
 #マッチングしたいURL
-URL="https://profile.intra.42.fr/slots"
+URL="https..."
 #時間　例: 8:30 - 9:30
 TIME=""
 
