@@ -6,17 +6,10 @@ import sys
 import time
 import json
 
-# コマンドライン引数を取得
-# if len(sys.argv) != 4:
-#     print("error main.shを見直してください")
-#     sys.exit(1)
-
 
 json_open = open('settings.json', 'r')
 json_load = json.load(json_open)
 URL = json_load["url"]
-INTRA_ID = json_load['intra_id']
-PASS = json_load["intra_password"]
 TIME = [
     json_load["time"]["monday"],
     json_load["time"]["tuesday"],
@@ -53,13 +46,7 @@ try:
 
     time.sleep(3)
     if(driver.current_url.find("auth.42.fr") != -1):
-        target = driver.find_element(By.ID,"username")
-        target.send_keys(INTRA_ID)
-
-        target = driver.find_element(By.ID,"password")
-        target.send_keys(PASS)
-
-        btn = driver.find_element(By.ID,"kc-login").click()
+        input("Please login to 42 Intra and press Enter to continue...")
 
     while not elements_found:
         driver.get(URL)

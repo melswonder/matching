@@ -5,7 +5,7 @@ pip install selenium
 ```
 
 
-# Setting
+# 設定
 ### settings.json example
 #### urlには、レビュー予約画面のURLを指定
 #### time複数入力時は、すべてが表示されるまでリロードします。
@@ -13,8 +13,6 @@ pip install selenium
 
 {
   "url": "https://profile.intra.42.fr/slots",
-  "intra_id": "foo",
-  "intra_password": "bar",
   "time": {
     "monday": {
       "label": "Monday",
@@ -54,7 +52,11 @@ pip install selenium
   }
 }
 
+```
 
 
-
+# 実行
+## ログインを求められる場合があります
+```
+python3 matching.py
 ```

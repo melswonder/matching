@@ -1,7 +1,5 @@
 {
   "url": "https://profile.intra.42.fr/slots",
-  "intra_id": "foo",
-  "intra_password": "bar",
   "time": {
     "monday": {
       "label": "Monday",
