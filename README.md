@@ -10,44 +10,40 @@ pip install selenium
 #### urlには、レビュー予約画面のURLを指定
 #### time複数入力時は、すべてが表示されるまでリロードします。
 ```json:settings.json
-
 {
   "url": "https://profile.intra.42.fr/slots",
   "time": {
     "monday": {
       "label": "Monday",
-      "start": "",
-      "end": ""
+      "times": [{ "start": "", "end": "" }]
     },
     "tuesday": {
       "label": "Tuesday",
-      "start": "",
-      "end": ""
+      "times": [{ "start": "", "end": "" }]
     },
     "wednesday": {
       "label": "Wednesday",
-      "start": "",
-      "end": ""
+      "times": [{ "start": "", "end": "" }]
     },
     "thursday": {
       "label": "Thursday",
-      "start": "",
-      "end": ""
+      "times": [{ "start": "", "end": "" }]
     },
     "friday": {
       "label": "Friday",
-      "start": "",
-      "end": ""
+      "times": [{ "start": "", "end": "" }]
     },
     "saturday": {
       "label": "Saturday",
-      "start": "2:00",
-      "end": "3:00"
+      "times": [{ "start": "", "end": "" }]
     },
     "sunday": {
       "label": "Sunday",
-      "start": "2:00",
-      "end": "3:00"
+      "times": [
+        { "start": "2:00", "end": "3:00" },
+        { "start": "3:15", "end": "4:30" },
+        { "start": "4:45", "end": "6:00" }
+      ]
     }
   }
 }

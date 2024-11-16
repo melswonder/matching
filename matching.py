@@ -7,7 +7,7 @@ import time
 import json
 
 
-json_open = open('settings.example.json', 'r')
+json_open = open('settings.json', 'r')
 json_load = json.load(json_open)
 URL = json_load["url"]
 TIME = [
@@ -63,17 +63,19 @@ try:
             
             time_json = TIME[i]
             day = week_grid[i+1]
-            if(not time_json['start'] or not time_json['end']):
-                continue
-            time_text = f'{time_json["start"]} - {time_json["end"]}'
-            elements = day.find_elements(By.XPATH, f'.//*[@class="fc-time"]/span[text()="{time_text}"]')
+            for timeVal in time_json["times"] :
+                if(not timeVal['start'] or not timeVal['end']):
+                    continue
+                time_text = f'{timeVal["start"]} - {timeVal["end"]}'
+                elements = day.find_elements(By.XPATH, f'.//*[@class="fc-time"]/span[text()="{time_text}"]')
 
 
-            if(len(elements) == 0):
-                print (f"Time {time_text} not found in {time_json['label']}")
-                elements_found = False
-            else:
-                print (f"Time {time_text} found in {time_json['label']}")
+                if(len(elements) == 0):
+                    print (f"Time {time_text} not found in {time_json['label']}")
+                    elements_found = False
+                    break
+                else:
+                    print (f"Time {time_text} found in {time_json['label']}")
 
 except Exception as e:
     print(f"error: {e}")
