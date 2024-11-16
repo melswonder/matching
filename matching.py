@@ -7,7 +7,7 @@ import time
 import json
 
 
-json_open = open('settings.json', 'r')
+json_open = open('settings.example.json', 'r')
 json_load = json.load(json_open)
 URL = json_load["url"]
 TIME = [
