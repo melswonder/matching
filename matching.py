@@ -51,10 +51,11 @@ try:
     while not elements_found:
         driver.get(URL)
         try:
-            WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//div[@class="fc-time"]'))
+            WebDriverWait(driver, 4).until(
+                EC.presence_of_element_located((By.XPATH, '//div[@class=fc-content]/div[@class="fc-time"]'))
             )
         except Exception as e:
+            # //*[@id="calendar"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/table/tbody/tr/td[4]/div/div[2]/a[1]/div[1]/div[1]
             print(f"Finding element..", e)
 
         week_grid = driver.find_elements(By.XPATH, '//div[@class="fc-content-skeleton"]//td')
